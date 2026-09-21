@@ -9,17 +9,44 @@ const Navbar = () => {
   const navigate = useNavigate();
   const [serverStatus, setServerStatus] = useState('checking');
 
+  const checkStatus = () => {
+    setServerStatus('checking');
+    apiService.checkHealth()
+      .then(() => setServerStatus('online'))
+      .catch((err) => {
+        console.warn('[Health Check] Ping failed:', err);
+        setServerStatus('offline');
+      });
+  };
+
   useEffect(() => {
     let isMounted = true;
-    apiService.checkHealth()
-      .then(() => {
-        if (isMounted) setServerStatus('online');
-      })
-      .catch(() => {
-        if (isMounted) setServerStatus('offline');
-      });
+    let timer;
 
-    return () => { isMounted = false; };
+    const performCheck = (attempt = 0) => {
+      apiService.checkHealth()
+        .then(() => {
+          if (isMounted) setServerStatus('online');
+        })
+        .catch(() => {
+          if (isMounted) {
+            // Render free tier can take 20-30s to wake from sleep on first cold hit
+            if (attempt < 4) {
+              setServerStatus('checking');
+              timer = setTimeout(() => performCheck(attempt + 1), 4000);
+            } else {
+              setServerStatus('offline');
+            }
+          }
+        });
+    };
+
+    performCheck(0);
+
+    return () => {
+      isMounted = false;
+      if (timer) clearTimeout(timer);
+    };
   }, []);
 
   const handleSignOut = async () => {
@@ -161,17 +188,24 @@ const Navbar = () => {
         {/* Right Controls: Status & User Menu */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
           {/* Server Status Indicator */}
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.45rem',
-            padding: '0.3rem 0.65rem',
-            background: 'rgba(255, 255, 255, 0.04)',
-            border: '1px solid var(--border-subtle)',
-            borderRadius: 'var(--radius-full)',
-            fontSize: '0.74rem',
-            fontWeight: 600,
-          }}>
+          <div 
+            onClick={checkStatus}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.45rem',
+              padding: '0.3rem 0.65rem',
+              background: 'rgba(255, 255, 255, 0.04)',
+              border: '1px solid var(--border-subtle)',
+              borderRadius: 'var(--radius-full)',
+              fontSize: '0.74rem',
+              fontWeight: 600,
+              cursor: 'pointer',
+              userSelect: 'none',
+              transition: 'background 0.2s',
+            }}
+            title="Click to re-check API connection"
+          >
             <span style={{
               width: '7px',
               height: '7px',
@@ -181,7 +215,7 @@ const Navbar = () => {
             }} />
             <span style={{ color: 'var(--text-muted)' }}>API:</span>
             <span style={{ color: serverStatus === 'online' ? '#10b981' : serverStatus === 'checking' ? '#f59e0b' : '#f43f5e' }}>
-              {serverStatus === 'online' ? 'Connected' : serverStatus === 'checking' ? 'Checking' : 'Offline'}
+              {serverStatus === 'online' ? 'Connected' : serverStatus === 'checking' ? 'Checking...' : 'Offline (Click to retry)'}
             </span>
           </div>
 

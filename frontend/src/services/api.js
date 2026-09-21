@@ -1,15 +1,19 @@
 import axios from 'axios';
 import { supabase } from './supabaseClient';
 
-// Public frontend environment variable in Vite
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+// Public frontend environment variable in Vite with production fallback
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || (
+  typeof window !== 'undefined' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1'
+    ? 'https://ai-resume-backend-61zn.onrender.com'
+    : 'http://localhost:8000'
+);
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },
-  timeout: 45000, // 45 seconds for LLM analysis operations
+  timeout: 60000, // 60 seconds for Render wake-up and LLM analysis operations
 });
 
 // Request interceptor to automatically attach authenticated Supabase JWT
