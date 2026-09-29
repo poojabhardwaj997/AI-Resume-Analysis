@@ -66,4 +66,5 @@ Thumbs.db
 uploads/
 temp/
 *.pdf
+!TalentLens_AI_Code_and_Analysis_Manual.pdf
 *.docx
