@@ -1,14 +1,20 @@
 # AI-Powered Resume Analysis & Skill Gap Detection System
 
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688.svg?style=flat&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
-[![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-blue.svg?logo=python&logoColor=white)](https://python.org)
+[![Python 3.13](https://img.shields.io/badge/Python-3.13-blue.svg?logo=python&logoColor=white)](https://python.org)
 [![React 18](https://img.shields.io/badge/React-18.3-61DAFB.svg?style=flat&logo=react&logoColor=black)](https://reactjs.org)
 [![Vite](https://img.shields.io/badge/Vite-6.0+-646CFF.svg?style=flat&logo=vite&logoColor=white)](https://vitejs.dev)
 [![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-3ECF8E.svg?style=flat&logo=supabase&logoColor=white)](https://supabase.com)
-[![Pytest](https://img.shields.io/badge/Tests-53%20Passed-brightgreen.svg?logo=pytest&logoColor=white)](https://pytest.org)
-[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED.svg?logo=docker&logoColor=white)](https://docker.com)
+[![Pytest](https://img.shields.io/badge/Tests-55%20Passed-brightgreen.svg?logo=pytest&logoColor=white)](https://pytest.org)
+[![Vercel Deployed](https://img.shields.io/badge/Vercel-Live-success.svg?logo=vercel&logoColor=white)](https://ai-resume-analysis-frontend-orcin.vercel.app/)
+[![Render Deployed](https://img.shields.io/badge/Render-Active-success.svg?logo=render&logoColor=white)](https://ai-resume-backend-61zn.onrender.com)
 
 A production-grade, AI-assisted recruitment analysis platform engineered with **FastAPI**, **React.js**, **OpenAI Structured JSON Mode**, and **Supabase PostgreSQL**. Built with explainability at its core to replace legacy keyword-stuffing ATS systems with transparent skill gap diagnostics, textual quote verification, and actionable candidate upskilling roadmaps.
+
+### 🌐 Live Deployment
+- **Frontend Web Application (Vercel):** [https://ai-resume-analysis-frontend-orcin.vercel.app/](https://ai-resume-analysis-frontend-orcin.vercel.app/)
+- **Backend API & Swagger Docs (Render):** [https://ai-resume-backend-61zn.onrender.com/docs](https://ai-resume-backend-61zn.onrender.com/docs)
+- **Database & Auth:** Supabase PostgreSQL with Row Level Security (RLS)
 
 ---
 
@@ -134,10 +140,12 @@ Import both files into Postman or Thunder Client to test all endpoints (`/api/he
 
 ---
 
-## 📑 Academic Documentation
+## 📑 Academic Documentation & Viva Preparation
 
+- **BSc IT External Viva Preparation Guide (PDF)**: [`BSc_IT_External_Viva_Preparation_Guide.pdf`](file:///c:/AIResumeAnalysis/BSc_IT_External_Viva_Preparation_Guide.pdf) *(Exhaustive viva defense manual with 25+ questions & answers, system architecture, database schema, and scoring logic)*.
+- **Complete Code & Analysis Manual (PDF)**: [`TalentLens_AI_Code_and_Analysis_Manual.pdf`](file:///c:/AIResumeAnalysis/TalentLens_AI_Code_and_Analysis_Manual.pdf) *(68-page comprehensive manual with authentic source code and architectural walkthroughs)*.
 - **Full Project Report**: [`docs/PROJECT_REPORT.md`](file:///c:/AIResumeAnalysis/docs/PROJECT_REPORT.md) (Abstract, Architecture, DFD Level 0/1/2, ER Diagrams, Scoring Mathematics, Security Analysis).
-- **Viva-Voce Q&A Guide**: [`docs/VIVA_PREPARATION_GUIDE.md`](file:///c:/AIResumeAnalysis/docs/VIVA_PREPARATION_GUIDE.md) (25+ examiner questions with model answers).
+- **Viva-Voce Q&A Guide**: [`docs/VIVA_PREPARATION_GUIDE.md`](file:///c:/AIResumeAnalysis/docs/VIVA_PREPARATION_GUIDE.md) (Examiner questions with model answers).
 - **Database Schema DDL**: [`backend/app/database/schema.sql`](file:///c:/AIResumeAnalysis/backend/app/database/schema.sql).
 
 ---
