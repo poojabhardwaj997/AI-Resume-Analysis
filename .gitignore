@@ -67,4 +67,5 @@ uploads/
 temp/
 *.pdf
 !TalentLens_AI_Code_and_Analysis_Manual.pdf
+!BSc_IT_External_Viva_Preparation_Guide.pdf
 *.docx
