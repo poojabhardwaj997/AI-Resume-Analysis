@@ -142,6 +142,7 @@ Import both files into Postman or Thunder Client to test all endpoints (`/api/he
 
 ## 📑 Academic Documentation & Viva Preparation
 
+- **BSc IT Final Viva Master Handbook in Hinglish (PDF)**: [`BSc_IT_Final_Viva_Master_Handbook_Hinglish.pdf`](file:///c:/AIResumeAnalysis/BSc_IT_Final_Viva_Master_Handbook_Hinglish.pdf) *(12-page comprehensive manual: System Architecture, AI/LLM Models, Workflow, Supabase Schemas, Scoring Mathematics, and 65+ External Viva Q&A in simple Hinglish)*.
 - **BSc IT External Viva Preparation Guide (PDF)**: [`BSc_IT_External_Viva_Preparation_Guide.pdf`](file:///c:/AIResumeAnalysis/BSc_IT_External_Viva_Preparation_Guide.pdf) *(Exhaustive viva defense manual with 25+ questions & answers, system architecture, database schema, and scoring logic)*.
 - **Complete Code & Analysis Manual (PDF)**: [`TalentLens_AI_Code_and_Analysis_Manual.pdf`](file:///c:/AIResumeAnalysis/TalentLens_AI_Code_and_Analysis_Manual.pdf) *(68-page comprehensive manual with authentic source code and architectural walkthroughs)*.
 - **Full Project Report**: [`docs/PROJECT_REPORT.md`](file:///c:/AIResumeAnalysis/docs/PROJECT_REPORT.md) (Abstract, Architecture, DFD Level 0/1/2, ER Diagrams, Scoring Mathematics, Security Analysis).
